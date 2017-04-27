@@ -1,0 +1,31 @@
+<div class="container body-content">
+    <div class="well">
+        <div class="row">
+            <div class="col-md-12">
+                <article>
+                    <header>
+                        <h2>{{article.title}}</h2>
+                    </header>
+
+                    <p>
+                        {{article.content}}
+                    </p>
+
+                    <small class="author">
+                        {{article.author.fullName}}
+                    </small>
+
+                    <footer>
+                        <div class="pull-right">
+                            {{#if isUserAuthorized}}
+                                <a class="btn btn-default btn-xs" href="/forum/article/edit/{{article.id}}">Edit &raquo;</a>
+                                <a class="btn btn-default btn-xs" href="/forum/article/delete/{{article.id}}">Delete &raquo;</a>
+                            {{/if}}
+                            <a class="btn btn-default btn-xs" href="/forum">Back &raquo;</a>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
