@@ -1,1 +1,11 @@
-<h1>Welcome</h1>
+<canvas id="renderCanvas"></canvas>
+<button class="fa fa-pause" id="simulation-toggle" onclick="togglePause()"></button>
+<script>
+    let spaceSimulation = new SpaceSimulation('renderCanvas');
+    spaceSimulation.render();
+
+    let togglePause = () => {
+        spaceSimulation.isPaused = !spaceSimulation.isPaused;
+        $('#simulation-toggle').toggleClass('fa-pause').toggleClass('fa-play');
+    }
+</script>
