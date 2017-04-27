@@ -12,6 +12,11 @@
     <script src="/javascripts/SkySphere.js"></script>
     <script src="/javascripts/spaceSimulation/CelestialBody.js"></script>
     <script src="/javascripts/spaceSimulation/SpaceSimulation.js"></script>
+    <script src="/javascripts/SpaceBalls/Score.js"></script>
+    <script src="/javascripts/SpaceBalls/Player.js"></script>
+    <script src="/javascripts/SpaceBalls/Meteor.js"></script>
+    <script src="/javascripts/SpaceBalls/configEvents.js"></script>
+    <script src="/javascripts/SpaceBalls/SpaceBalls.js"></script>
 </head>
 <body>
 <header>
@@ -39,6 +44,7 @@
                                 </ul>
                             </li>
                         {{/if}}
+                        <li><a href="/game"><i class="fa fa-globe" aria-hidden="true"></i> SpaceBalls</a></li>
                         <li><a href="/forum"><i class="fa fa-comments-o" aria-hidden="true"></i> Forum</a></li>
                         <li><a href="/forum/article/create"> New Article</a></li>
                         <li class="dropdown">
@@ -56,6 +62,7 @@
             {{#unless user}}
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/game"><i class="fa fa-globe" aria-hidden="true"></i> SpaceBalls</a></li>
                         <li><a href="/forum"><i class="fa fa-comments-o" aria-hidden="true"></i> Forum</a></li>
                         <li><a href="/user/register"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a></li>
                         <li><a href="/user/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
