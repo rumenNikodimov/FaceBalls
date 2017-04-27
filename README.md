@@ -1,2 +1,2 @@
 # SpaceBalls
-First Team Project
+A 3-D 'Endless runner'-type game
