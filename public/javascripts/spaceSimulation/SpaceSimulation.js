@@ -27,11 +27,11 @@ class SpaceSimulation {
         this.spaceBodies.push(sun);
 
         let earth = new CelestialBody(0, 6.371, '/../images/simulationAssets/earth.jpg', this.scene, 'planet',
-                                      'ccw', 0.005, 'ccw', 0.05 , sun);
+                                      'ccw', 0.005);
         this.spaceBodies.push(earth);
 
         let moon = new CelestialBody(15, 1.737, '/../images/simulationAssets/moon.jpg', this.scene, 'moon',
-                                      'ccw', 0.01, 'ccw', 0.09, earth);
+                                      'ccw', 0.01);
         this.spaceBodies.push(moon);
 
         this.alpha = 0;
