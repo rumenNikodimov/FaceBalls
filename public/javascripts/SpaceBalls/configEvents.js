@@ -65,7 +65,7 @@ let configEvents = (game) => {
         name: 'gameOver',
         handler: () => {
             document.getElementById('game-over').style.visibility = 'visible';
-            document.getElementById('game-submit').value = game.score.score;
+            document.getElementById('game-submit').value = game.score.score.toFixed(2);
         }
     }]);
 };
