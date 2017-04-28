@@ -1,5 +1,74 @@
 <canvas id="renderCanvas"></canvas>
+<button class="about_button" data-toggle="modal" data-target="#about_modal">
+    <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i>
+</button>
+
 <button class="fa fa-pause" id="simulation-toggle" onclick="togglePause()"></button>
+
+<div id="about_modal" class="modal fade" role="dialog">
+    <div class="modal-dialog well">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1>About</h1>
+        </div>
+        <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-3 card card1">
+                        <img src="/images/cards/about_bozhidar.jpg" alt="Bozhidar">
+                        <div class="card_container">
+                            <h1>Bozhidar Dimitrov</h1>
+                            <p class="title">CEO & Founder, Example</p>
+                            <p>Sofia University</p>
+                            <div style="margin: 24px 0;">
+                                <a href="https://www.linkedin.com/in/bozhidar-dimitrov-998298139/"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.facebook.com/bozhidar.dimitrov.39"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 card card2">
+                        <img src="/images/cards/about_rostislav.jpg" alt="Rostislav">
+                        <div class="card_container">
+                            <h1>Rostislav Radev</h1>
+                            <p class="title">CEO & Founder, Example</p>
+                            <p>Software University</p>
+                            <div style="margin: 24px 0;">
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.facebook.com/Radeff?fref=ts"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 card card3">
+                        <img src="/images/cards/about_rumen.jpg" alt="Rumen">
+                        <div class="card_container">
+                            <h1>Rumen Nikodimov</h1>
+                            <p class="title">CEO & Founder, Example</p>
+                            <p>VTU 'St. St. Kiril and Methodius'</p>
+                            <div style="margin: 24px 0;">
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.facebook.com/rumen.nikodimov?fref=ts"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 card card4">
+                        <img src="/images/cards/about_savina.jpg" alt="Savina">
+                        <div class="card_container">
+                            <h1>Savina Dimitrova</h1>
+                            <p class="title">CEO & Founder, Example</p>
+                            <p>Sofia University</p>
+                            <div style="margin: 24px 0;">
+                                <a href="https://www.linkedin.com/in/savina-dimitrova-982554b0/"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.facebook.com/savina.dimitrova.104?fref=ts"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
 <script>
     let spaceSimulation = new SpaceSimulation('renderCanvas');
     spaceSimulation.render();
