@@ -8,6 +8,7 @@ let userSchema = mongoose.Schema({
         fullName: {type: String, required: true},
         articles: [{type: mongoose.Schema.Types.ObjectId, ref: 'Article'}],
         highScore: {type: Number, default: 0},
+        dateAchieved: {type: Date, default: Date.now()},
         roles: [{type: mongoose.Schema.Types.ObjectId, ref: 'Role'}],
         salt: {type: String, required: true}
     });
