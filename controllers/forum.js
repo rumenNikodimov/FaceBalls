@@ -14,6 +14,7 @@ module.exports = {
     highscores: (req, res) => {
         User.find({}).limit(10).then(users => {
             let usersWithHighScore = users.filter(u => {return u.highScore != 0});
+            usersWithHighScore.sort(function (a,b) {return b.highScore - a.highScore});
             res.render('highscores', {users: usersWithHighScore});
         })
     }
