@@ -14,7 +14,7 @@ class SpaceBalls {
         this.camera = new BABYLON.FreeCamera('Camera', new BABYLON.Vector3(0, 0, -10), this.scene);
         this.camera.speed = 4;
         this.camera.setTarget(new BABYLON.Vector3(0, 0, 20));
-        this.camera.maxZ = 200000000000000;
+        this.camera.maxZ = 2000000000000000000000;
 
         this.player = new Player('/../images/gameAssets/player.png', this.scene, this.camera, 0.1);
 
