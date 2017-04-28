@@ -1,0 +1,26 @@
+
+<div class="container body-content">
+    <div class="well">
+        <h2>Highscores</h2>
+        <div class="row">
+            <table class="table table-responsive table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Score</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each users}}
+                    <tr class="info">
+                        <td>{{@index}}</td>
+                        <td>{{this.fullName}}</td>
+                        <td>{{this.highScore}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

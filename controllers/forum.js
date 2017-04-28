@@ -1,4 +1,5 @@
 const Article = require('mongoose').model('Article');
+const User = require('mongoose').model('User');
 
 module.exports = {
     index: (req, res) => {
@@ -11,6 +12,9 @@ module.exports = {
     },
 
     highscores: (req, res) => {
-        res.render('highscores');
+        User.find({}).limit(10).then(users => {
+            let usersWithHighScore = users.filter(u => {return u.highScore != 0});
+            res.render('highscores', {users: usersWithHighScore});
+        })
     }
 };
