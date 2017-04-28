@@ -1,11 +1,31 @@
-<canvas id="renderCanvas"></canvas>
-<div id="game">
-    <div id="lives"></div>
-    <div id="score"></div>
-    <div id="level"></div>
+<div id="gameNav" class="nav nav-tabs text-uppercase">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3" id="lives"></div>
+            <div class="col-sm-3" id="score"></div>
+            <div class="col-sm-3" id="level"></div>
+            <button class="fa fa-pause col-sm-3 pull-right" id="simulation-toggle" onclick="togglePause()"></button>
+        </div>
+    </div>
 </div>
 
+<canvas id="renderCanvas"></canvas>
+<!--</div>-->
+<!--<div id="game">-->
+<!--<div id="lives"></div>-->
+<!--<div id="score"></div>-->
+<!--<div id="level"></div>-->
+<!--</div>-->
+
 <script>
+    let spaceSimulation = new SpaceSimulation('renderCanvas');
+    spaceSimulation.render();
+
+    let togglePause = () => {
+        spaceSimulation.isPaused = !spaceSimulation.isPaused;
+        $('#simulation-toggle').toggleClass('fa-pause').toggleClass('fa-play');
+    };
+
     let randomNum = (min, max) => {
         if(min === max) return min;
         return Math.random() * (max - min) + min;
