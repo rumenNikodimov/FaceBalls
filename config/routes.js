@@ -7,6 +7,8 @@ module.exports = (app) => {
     app.get('/', homeController.index);
     app.get('/forum', homeController.indexForum);
 
+    app.get('/highscores', homeController.highscores);
+
     app.get('/user/register', userController.registerGet);
     app.post('/user/register', userController.registerPost);
 

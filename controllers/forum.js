@@ -8,5 +8,9 @@ module.exports = {
         Article.find({}).limit(6).populate('author').then(articles => {
             res.render('forum/index', {articles: articles});
         })
+    },
+
+    highscores: (req, res) => {
+        res.render('highscores');
     }
 };
