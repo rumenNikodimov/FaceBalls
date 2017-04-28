@@ -10,7 +10,8 @@ let userSchema = mongoose.Schema({
         highScore: {type: Number, default: 0},
         dateAchieved: {type: String},
         roles: [{type: mongoose.Schema.Types.ObjectId, ref: 'Role'}],
-        salt: {type: String, required: true}
+        salt: {type: String, required: true},
+imagePath: {type: String}
     });
 
 userSchema.method ({
