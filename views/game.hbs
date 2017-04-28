@@ -18,14 +18,6 @@
 <!--</div>-->
 
 <script>
-    let spaceSimulation = new SpaceSimulation('renderCanvas');
-    spaceSimulation.render();
-
-    let togglePause = () => {
-        spaceSimulation.isPaused = !spaceSimulation.isPaused;
-        $('#simulation-toggle').toggleClass('fa-pause').toggleClass('fa-play');
-    };
-
     let randomNum = (min, max) => {
         if(min === max) return min;
         return Math.random() * (max - min) + min;
@@ -33,6 +25,11 @@
 
     let spaceBalls = new SpaceBalls('renderCanvas');
     spaceBalls.render();
+    
+    let togglePause = () => {
+        spaceBalls.isPaused = !spaceBalls.isPaused;
+        $('#simulation-toggle').toggleClass('fa-pause').toggleClass('fa-play');
+    };
 </script>
 
 <div id="game-over" class="container body-content span=8 offset=2">
