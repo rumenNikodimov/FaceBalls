@@ -7180,6 +7180,14 @@ body {
   visibility: hidden;
 }
 
+#gameNav {
+  color: white;
+  margin-top: 0px;
+  text-align: center;
+  display: block;
+  padding-bottom: 10px;
+}
+
 footer {
   position: fixed;
   bottom: 0;
