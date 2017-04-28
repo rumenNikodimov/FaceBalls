@@ -1,20 +1,33 @@
 <div class="container body-content" xmlns="http://www.w3.org/1999/html">
     <div class="well">
 
-        <div class="col-xs-12" align="center" >
-            <img src="/images/UserPics/userAvatar.png" id="profile-picture"><br>
-            <button type="button" name="btnUploadPic">Change picture</button>
-        </div>
+            <div class="row col-xs-12" align="center" >
 
-        <div class="col-xs-12 " align="center" style="border-radius: 17px; border-color: #1a242f; border: solid; padding: 12px; margin:15px;">
-            <label class="col-sm-4 control-label" for="imageInput">Upload picture:</label>
-            <div class="col-xs-6" style="background-color: #e7e7e7; padding: 7px;">
-                <input type="file" hidden="hidden" id="imageInput" name="pictureUploader">
+                {{#unless imagePath}}
+                    <img src="/images/User/userAvatar.gif" alt="User picture" ><br>
+                {{/unless}}
+
+                {{#if imagePath}}
+                    <img src="{{imagePath}}"  alt="User picture"><br>
+                {{/if}}
+
+            <button type="button" name="btnUploadPic" data-toggle="collapse" data-target="#upload" style="margin: 7px;">Change picture</button>
+                <form class="form-horizontal" enctype="multipart/form-data" method="post" action="profile.hbs">
+                    <fieldset>
+                <div  id="upload" class=" collapse row col-xs-12 " align="center" style="border-radius: 17px; border-color: #1a242f; border: solid; padding: 12px; margin:15px;">
+                    <label class="col-xs-4 control-label" for="imageInput">Upload picture:</label>
+                    <div class="col-xs-6" style="background-color: #e7e7e7; padding: 7px;">
+                        <input type="file" id="imageInput" name="pictureUploader">
+                    </div>
+                </div>
+                    </fieldset>
+                </form>
             </div>
-        </div>
 
 
-        <div>
+
+
+        <div class="row">
             <p>UserName:<br>
                 Highscores:</p>
         </div>
