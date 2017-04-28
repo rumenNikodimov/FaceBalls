@@ -2,6 +2,7 @@ const adminController = require('./../controllers/admin/admin');
 const userController = require('./../controllers/user');
 const articleController = require('./../controllers/article');
 const homeController = require('./../controllers/forum');
+const gameController = require('./../controllers/game');
 
 module.exports = (app) => {
     app.get('/', homeController.index);
@@ -28,6 +29,9 @@ module.exports = (app) => {
     app.get('/forum/article/delete/:id', articleController.deleteGet);
     app.post('/forum/article/delete/:id', articleController.deletePost);
     app.get('/forum/article/details/:id', articleController.details);
+
+    app.get('/game', gameController.gameGet);
+    app.post('/game', gameController.gamePost);
 
     app.use((req, res, next) => {
         if(req.isAuthenticated()){
