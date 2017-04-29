@@ -15,6 +15,11 @@
                         <textarea class="form-control" id="articleContent" rows="5" name="content" disabled>{{content}}</textarea>
                     </div>
                 </div>
+
+                {{#if Article.imagePath}}
+                    <img src="{{imagePath}}" width="400" alt="Article image">
+                {{/if}}
+
                 <div class="form-group">
                     <div class="col-sm-4 col-sm-offset-4">
                         <a href="/" class="btn btn-default">Cancel</a>
