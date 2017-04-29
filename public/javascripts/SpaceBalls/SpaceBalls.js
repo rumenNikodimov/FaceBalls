@@ -23,6 +23,11 @@ class SpaceBalls {
             this.isPaused = true;
             this.music.pause();
         });
+        window.addEventListener("keydown", (e) => {
+            if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+                e.preventDefault();
+            }
+        }, false);
         canvas.addEventListener('click', () => {
             if(this.player.isHit) {
                 this.scene.meshes.splice(2, this.scene.meshes.length - 2);
