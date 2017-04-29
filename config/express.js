@@ -6,7 +6,7 @@ const session = require('express-session');
 const passport = require('passport');
 const logger = require('morgan');
 const favicon = require('serve-favicon');
-const fileUpload=require('express-fileupload');
+const fileUpload = require('express-fileupload');
 
 module.exports = (app, config) => {
 // view engine setup
@@ -21,6 +21,8 @@ module.exports = (app, config) => {
     app.use(session({ secret: 's3cr3t5tr1ng', resave: false, saveUninitialized: false}));
     app.use(passport.initialize());
     app.use(passport.session());
+
+    app.use(fileUpload());
 
     app.use(logger('dev'));
 
@@ -37,5 +39,4 @@ module.exports = (app, config) => {
     });
 
     app.use(express.static(path.join(config.rootFolder, 'public')));
-    app.use(fileUpload());
 };

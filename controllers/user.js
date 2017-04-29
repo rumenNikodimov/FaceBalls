@@ -92,10 +92,43 @@ module.exports = {
     },
 
     profileGet: (req, res) => {
-        res.render('user/profile');
+
+        let id = req.user.id;
+
+        if(id === undefined) {
+            res.redirect('/');
+        }
+
+        User.findById(id).then(user => {
+            res.render('user/profile', user);
+        });
     },
 
     profilePost: (req, res) => {
-        let profileArgs = req.params.body;
+        let userid = req.user.id;
+        let image = req.files.image;
+
+        if (image) {
+            let filenameAndExt = image.name;
+            let filename = filenameAndExt.substring(0, filenameAndExt.lastIndexOf('.'));
+            let ext = filenameAndExt.substring(filenameAndExt.lastIndexOf('.'));
+            let randomPart = encryption.generateSalt().substring(0, 5).replace(/\//g, 'x');
+            let randomFileName = filename + randomPart + ext;
+            image.mv(`../public/images/userPics/${randomFileName}`, err => {
+                if (err) {
+                    console.log(err.message);
+                }
+            });
+
+            User.findById(userid).then(u => {
+                u.imagePath = `/images/userPics/${randomFileName}`;
+                u.save();
+                res.render('user/profile', u);
+            });
+
+
+        }
+
+
     }
 };
