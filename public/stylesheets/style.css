@@ -7060,7 +7060,6 @@ article .author  {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   max-width:300px;
-  margin: 30px;
   text-align: center;
   font-family: arial;
   background-color: #ffffff;
@@ -7151,9 +7150,6 @@ body {
 #simulation-toggle {
   z-index: 1000;
   background-color: black;
-  /*right: 10px;*/
-  /*top: 90px;*/
-  /*position: absolute;*/
   width: 60px;
   height: 20px;
 }
