@@ -34,7 +34,7 @@ module.exports = {
                 }
 
             });
-            articleArgs.imagePath=`/images/${finalFilename}`;
+            articleArgs.imagePath=`./public/images/articleImages/${finalFilename}`;
         }
 
         articleArgs.author = req.user.id;
