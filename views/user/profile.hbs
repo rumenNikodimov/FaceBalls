@@ -1,35 +1,33 @@
 <div class="container body-content" xmlns="http://www.w3.org/1999/html">
     <div class="well">
-
             <div class="row col-xs-12" align="center" >
 
-                {{#unless imagePath}}
-                    <img src="/images/User/userAvatar.gif" alt="User picture" ><br>
+                {{#unless user.imagePath}}
+                    <img src="/images/UserPics/userAvatar.gif" alt="User picture" ><br>
                 {{/unless}}
 
-                {{#if imagePath}}
-                    <img src="{{imagePath}}"  alt="User picture"><br>
+                {{#if user.imagePath}}
+                    <img src="{{user.imagePath}}" width="400" alt="User picture"><br>
                 {{/if}}
 
             <button type="button" name="btnUploadPic" data-toggle="collapse" data-target="#upload" style="margin: 7px;">Change picture</button>
-                <form class="form-horizontal" enctype="multipart/form-data" method="post" action="profile.hbs">
+                <form class="form-horizontal" enctype="multipart/form-data" method="POST" action="/user/profile">
                     <fieldset>
                 <div  id="upload" class=" collapse row col-xs-12 " align="center" style="border-radius: 17px; border-color: #1a242f; border: solid; padding: 12px; margin:15px;">
                     <label class="col-xs-4 control-label" for="imageInput">Upload picture:</label>
                     <div class="col-xs-6" style="background-color: #e7e7e7; padding: 7px;">
-                        <input type="file" id="imageInput" name="pictureUploader">
+                        <input type="file" id="image" name="image">
+                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
                     </fieldset>
                 </form>
             </div>
-
-
-
-
         <div class="row">
-            <p>UserName:<br>
-                Highscores:</p>
+            <p class="text-center">UserName: {{user.fullName}}</p>
+            <p class="text-center">Email address: {{user.email}}</p>
+            <p class="text-center">Highscore: {{user.highScore}}</p>
         </div>
     </div>
 </div>
