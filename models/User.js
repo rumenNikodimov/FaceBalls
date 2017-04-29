@@ -11,7 +11,7 @@ let userSchema = mongoose.Schema({
         dateAchieved: {type: String},
         roles: [{type: mongoose.Schema.Types.ObjectId, ref: 'Role'}],
         salt: {type: String, required: true},
-imagePath: {type: String}
+        imagePath: {type: String}
     });
 
 userSchema.method ({
