@@ -8,7 +8,7 @@ class SpaceBalls {
         this.lastFrame = performance.now();
         this.isPaused = true;
 
-        let skySphere = new SkySphere(200000000000000000000, '/../images/StarField/mw.jpg', this.scene);
+        let skySphere = new SkySphere(2000000000000000000, '/../images/StarField/mw.jpg', this.scene);
         this.music = new BABYLON.Sound("background", "sounds/background.mp3", this.scene, null, { loop: true, autoplay: true});
 
         this.camera = new BABYLON.FreeCamera('Camera', new BABYLON.Vector3(0, 0, -10), this.scene);
