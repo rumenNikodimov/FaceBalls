@@ -10,7 +10,7 @@
                     <img src="{{user.imagePath}}" width="400" alt="User picture"><br>
                 {{/if}}
 
-            <button type="button" name="btnUploadPic" data-toggle="collapse" data-target="#upload" style="margin: 7px;">Change picture</button>
+            <button type="button" name="btnUploadPic" class="btn btn-primary" data-toggle="collapse" data-target="#upload" style="margin: 7px;">Change picture</button>
                 <form class="form-horizontal" enctype="multipart/form-data" method="POST" action="/user/profile">
                     <fieldset>
                 <div  id="upload" class=" collapse row col-xs-12 " align="center" style="border-radius: 17px; border-color: #1a242f; border: solid; padding: 12px; margin:15px;">
