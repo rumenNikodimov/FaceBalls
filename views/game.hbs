@@ -4,18 +4,11 @@
             <div class="col-sm-3" id="lives"></div>
             <div class="col-sm-3" id="score"></div>
             <div class="col-sm-3" id="level"></div>
-            <button class="fa fa-pause col-sm-3 pull-right" id="simulation-toggle" onclick="togglePause()"></button>
         </div>
     </div>
 </div>
 
 <canvas id="renderCanvas"></canvas>
-<!--</div>-->
-<!--<div id="game">-->
-<!--<div id="lives"></div>-->
-<!--<div id="score"></div>-->
-<!--<div id="level"></div>-->
-<!--</div>-->
 
 <script>
     let randomNum = (min, max) => {
@@ -25,11 +18,6 @@
 
     let spaceBalls = new SpaceBalls('renderCanvas');
     spaceBalls.render();
-    
-    let togglePause = () => {
-        spaceBalls.isPaused = !spaceBalls.isPaused;
-        $('#simulation-toggle').toggleClass('fa-pause').toggleClass('fa-play');
-    };
 </script>
 
 <div id="game-over" class="container body-content span=8 offset=2">
