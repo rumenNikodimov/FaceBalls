@@ -99,10 +99,6 @@ module.exports = {
         
         let id = req.user.id;
 
-        if(id === undefined) {
-            res.redirect('/');
-        }
-
         User.findById(id).then(user => {
             res.render('user/profile', user);
         });
