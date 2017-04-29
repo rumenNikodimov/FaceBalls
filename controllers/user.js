@@ -92,7 +92,11 @@ module.exports = {
     },
 
     profileGet: (req, res) => {
-
+        if(!req.isAuthenticated()) {
+            res.redirect('/user/login');
+            return;
+        }
+        
         let id = req.user.id;
 
         if(id === undefined) {
@@ -105,6 +109,11 @@ module.exports = {
     },
 
     profilePost: (req, res) => {
+        if(!req.isAuthenticated()) {
+            res.redirect('/user/login');
+            return;
+        }
+        
         let userid = req.user.id;
         let image = req.files.image;
 
@@ -125,10 +134,6 @@ module.exports = {
                 u.save();
                 res.render('user/profile', u);
             });
-
-
         }
-
-
     }
 };
